@@ -40,11 +40,19 @@ body {
     margin: 30px 10%;
 }
 
-h1 {
+main-title {
     font-family: var(--font-h1), Lemon Milk;
     font-size: 50px;
     font-weight: normal;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: normal;
+
 }
 h2 {
     font-size: 28px;
