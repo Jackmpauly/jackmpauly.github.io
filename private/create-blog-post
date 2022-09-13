@@ -1,0 +1,65 @@
+#!/bin/bash
+blog_posts_in="./blog_posts"
+blog_posts_out="./../blog"
+blog_post_index="$blog_posts_out/index.html"
+
+index="<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link rel='stylesheet' href='../root.css'>
+
+        <title>Blog</title>
+        
+
+    </head>
+
+    <body>
+        <div class='main'>
+            <main-title>thoughts.txt</main-title>
+            <a href='..'><<</a>
+            <p>Music, misc. thoughts, ramblings, etc.</p>
+"
+
+SAVEIFS=$IFS
+IFS=$(echo "\n\b")
+
+
+for blog_file in $(ls -1 $blog_posts_in)
+do
+    post_name=$(basename $blog_file .md)
+    # echo $(basename $blog_file .md)
+    html="<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='../root.css'>
+        <style>
+            a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class=main>
+            <a href='..'><<</a>
+            $(marked -i "$blog_posts_in/$blog_file")
+        </div>
+    </body>
+</html>
+"
+echo "$html" > "$blog_posts_out/$post_name.html"
+
+index="$index
+            <a class='blog-post-link' href='blog/$post_name.html'>$(basename $post_name .md)</a>
+"
+
+done
+IFS=$SAVE_IFS
+
+index="$index
+        </div>
+    </body>
+</html>"
+
+echo "$index" > $blog_post_index

@@ -12,6 +12,13 @@
     --font-h1: 'Lemon Milk';
 }
 
+div a:after{
+    content:"";
+    display: block;
+    height: 0;
+    width: 1px;
+}
+
 body {
     font-family: var(--font-primary), serif;
     color: var(--text-primary);
@@ -45,8 +52,6 @@ main-title {
     font-size: 50px;
     font-weight: normal;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 h1 {
