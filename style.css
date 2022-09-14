@@ -1,0 +1,84 @@
+:root {
+    --font-primary: 'Courier New', monospace;
+
+    --very-dark-grey: #222;
+    --dark-grey: #555;
+    --light-grey: #DADADA;
+    --very-light-grey: #f8f8f8;
+    
+    --text-primary: color(--very-dark-grey);
+    --text-secondary: color(--dark-grey);
+    
+    --font-h1: 'Lemon Milk';
+}
+
+div a:after{
+    content:"";
+    display: block;
+    height: 0;
+    width: 1px;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-primary);
+}
+
+@media screen and (max-width: 700px) {
+    .link-to-code {
+        display: none;
+    }
+}
+@media screen and (min-width: 700px) {
+    .main {
+        margin: 30px;
+        width: 600px;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.main {
+    margin: 30px 10%;
+}
+
+h1 {
+    font-family: var(--font-h1), Lemon Milk;
+    font-size: 50px;
+    font-weight: normal;
+
+}
+h2 {
+    font-size: 28px;
+    font-style: italic;
+}
+h3 {
+    font-size: 20px;
+}
+p {
+    font-size: 18px;
+}
+
+.home-link {
+	display: block;
+    text-decoration: none;
+    color: blue;
+}
+.inline {
+    display: inline-block;
+    text-decoration: none;
+    color: blue;
+}
+.home-link span {
+    font-family: arial;
+    font-size: 1.7rem;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

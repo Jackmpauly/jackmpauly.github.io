@@ -8,7 +8,7 @@ index="<!DOCTYPE html>
     <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <link rel='stylesheet' href='../root.css'>
+        <link rel='stylesheet' href='../style.css'>
 
         <title>Blog</title>
         
@@ -17,8 +17,8 @@ index="<!DOCTYPE html>
 
     <body>
         <div class='main'>
-            <main-title>thoughts.txt</main-title>
             <a href='..'><<</a>
+            <main-title>thoughts.txt</main-title>
             <p>Music, misc. thoughts, ramblings, etc.</p>
 "
 
@@ -33,7 +33,7 @@ do
     html="<!DOCTYPE html>
 <html>
     <head>
-        <link rel='stylesheet' href='../root.css'>
+        <link rel='stylesheet' href='../style.css'>
         <style>
             a {
                 text-decoration: none;
@@ -42,7 +42,7 @@ do
     </head>
     <body>
         <div class=main>
-            <a href='index.html'><<</a>
+            <a href='..'><<</a>
             $(marked -i "$blog_posts_in/$blog_file")
         </div>
     </body>
@@ -51,7 +51,7 @@ do
 echo "$html" > "$blog_posts_out/$post_name.html"
 
 index="$index
-            <a class='blog-post-link' href='blog/$post_name.html'>$(basename $post_name .md)</a>
+            <a class='blog-post-link' href='blog/$post_name.html'>>> $(basename $post_name .md)</a>
 "
 
 done
