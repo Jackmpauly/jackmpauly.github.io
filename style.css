@@ -67,6 +67,12 @@ p {
     text-decoration: none;
     color: blue;
 }
+.blog-post-link {
+	display: block;
+    text-decoration: none;
+    color: blue;
+}
+
 .inline {
     display: inline-block;
     text-decoration: none;

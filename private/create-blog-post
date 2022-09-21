@@ -18,7 +18,7 @@ index="<!DOCTYPE html>
     <body>
         <div class='main'>
             <a href='..'><<</a>
-            <main-title>thoughts.txt</main-title>
+            <h1>thoughts.txt</h1>
             <p>Music, misc. thoughts, ramblings, etc.</p>
 "
 
@@ -51,7 +51,7 @@ do
 echo "$html" > "$blog_posts_out/$post_name.html"
 
 index="$index
-            <a class='blog-post-link' href='blog/$post_name.html'>>> $(basename $post_name .md)</a>
+            <a class='blog-post-link' href='$post_name.html'>>> $(basename $post_name .md)</a>
 "
 
 done
