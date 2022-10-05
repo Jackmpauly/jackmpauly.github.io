@@ -1,4 +1,5 @@
 #!/bin/bash
+. ~/.bash_profile
 blog_posts_in="./blog_posts"
 blog_posts_out="./../blog"
 blog_post_index="$blog_posts_out/index.html"
