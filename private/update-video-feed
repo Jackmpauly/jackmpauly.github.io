@@ -1,0 +1,74 @@
+#!/bin/bash
+# . ~/.bash_profile
+# blog_posts_in="./blog_posts"
+# blog_posts_out="./../blog"
+paulys_pocket_file="../paulys_pocket.html"
+
+index="<!DOCTYPE html>
+<html lang=\"en\">
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link rel='stylesheet' href='../style.css'>
+
+        <title>Pauly's Pocket</title>
+        
+
+    </head>
+
+    <body>
+        <div class='main'>
+            <a href='index.html'><<</a>
+
+            <h1>Pauly's Pocket</h1>
+            <h3>A feed of all of the VODs I've released for Pauly's Pocket</h3>
+
+            <center>
+"
+
+SAVEIFS=$IFS
+IFS=$(echo "\n\b")
+# IFS='\n'
+
+
+File="youtube-links.txt"
+Lines=$(cat $File)
+
+arr=()
+
+for line in $Lines
+do
+    echo $line
+
+    IFS='|'
+    arr=()
+    for part in $line
+    do
+        # echo "-- " $part
+        arr+=($part)
+    done
+
+    # echo "--- " ${arr[0]}
+    # echo "--- " ${arr[1]}
+    # echo "--- " ${arr[2]}
+    # echo "--- " ${arr[3]}
+
+    index="$index
+                <div class='box'>
+                        <h3>${arr[0]}</h3>
+                        <p><em>${arr[1]}</em></p>
+                        <p>${arr[2]}</p>
+                        <iframe width='560' height='315' src='https://www.youtube.com/embed/${arr[3]}' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                </div>
+    "
+    IFS=$(echo "\n\b")
+done
+IFS=$SAVE_IFS
+
+index="$index
+        </center>
+        </div>
+    </body>
+</html>"
+
+echo "$index" > $paulys_pocket_file

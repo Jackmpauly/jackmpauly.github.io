@@ -29,10 +29,10 @@ body {
         display: none;
     }
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
     .main {
-        margin: 30px;
-        width: 600px;
+        margin: 20px;
+        width: 700px;
     }
 
     body {
@@ -42,7 +42,21 @@ body {
 }
 
 .main {
-    margin: 30px 10%;
+    margin: 10px 5%;
+    /* test to see borders */
+    /* border: 1px solid blue; */
+}
+
+.box {
+    display: block;
+    margin: 20px 1%;
+    padding: 2px;
+    border: 2px solid red;
+}
+
+iframe {
+    display: block;
+    border-style: none;
 }
 
 h1 {
