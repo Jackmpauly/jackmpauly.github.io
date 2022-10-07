@@ -58,11 +58,14 @@ do
                         <h3>${arr[0]}</h3>
                         <p><em>${arr[1]}</em></p>
                         <p>${arr[2]}</p>
-                        <iframe width='560' height='315' src='https://www.youtube.com/embed/${arr[3]}' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                        <div class = 'embed-youtube'>
+                            <iframe src='https://www.youtube.com/embed/${arr[3]}' width='750' height='563'</iframe>
+                        </div>
                 </div>
     "
     IFS=$(echo "\n\b")
 done
+                        # <iframe width='560' height='315' src='https://www.youtube.com/embed/${arr[3]}' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
 IFS=$SAVE_IFS
 
 index="$index
