@@ -53,14 +53,6 @@ do
 "
 echo "$html" > "$blog_posts_out/$post_name.html"
 
-
-# index="$index
-#             <a class='blog-post-link' href='$post_name.html'>>> $(basename $post_name .md)</a>
-# "
-
-# maybe try doing something here ^^ where i get an array of blog names, then put them in reverse order in the index.html blog page file
-
-
 done
 
 for ((i=${#arr[@]}-1; i>=0; i--)); do
