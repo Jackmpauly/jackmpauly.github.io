@@ -59,7 +59,7 @@ do
                         <p><em>${arr[1]}</em></p>
                         <p>${arr[2]}</p>
                         <div class = 'embed-youtube'>
-                            <iframe src='https://www.youtube.com/embed/${arr[3]}' width='750' height='563'</iframe>
+                            <iframe src='https://www.youtube.com/embed/${arr[3]}' width='750' height='563'></iframe>
                         </div>
                 </div>
     "
